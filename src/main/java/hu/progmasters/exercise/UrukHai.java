@@ -8,12 +8,14 @@ public class UrukHai extends Orc{
         super.setFriendly(false);
     }
 
-    public boolean NotTestedUrukHai(Human human){
-        if (Objects.nonNull(human) && humanList.contains(human)){
-            humanList.remove(human);
+    public boolean inNominePatris(Human human){
+        if (Objects.nonNull(human) && humans.contains(human)){
+            humans.remove(human);
             return true;
         } else {
             return false;
         }
     }
+
+
 }

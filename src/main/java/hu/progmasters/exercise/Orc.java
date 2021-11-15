@@ -1,27 +1,28 @@
 package hu.progmasters.exercise;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class Orc extends Monster{
     private boolean friendly;
-    List<Human> humanList;
+    List<Human> humans = new ArrayList<>();
     private List<Weapon> weaponList;
 
     public Orc(String name, int age, String color, boolean carnivorous, int hp) {
         super(name, age, color, carnivorous, hp);
     }
 
-    public boolean notTestedOrc1(Human human){
+    public boolean captureHuman(Human human){
         if (Objects.nonNull(human)){
-            humanList.add(human);
+            humans.add(human);
             return true;
         } else {
             return false;
         }
     }
 
-    private void notTestedORc2(Monster monster, Weapon weapon){
+    public void hurtEnemy(Monster monster, Weapon weapon){
         if (Objects.nonNull(monster) && monster.getHp() > 0){
             monster.setHp(monster.getHp() - weapon.getDamage());
         }
@@ -35,12 +36,12 @@ public class Orc extends Monster{
         this.friendly = friendly;
     }
 
-    public List<Human> getHumanList() {
-        return humanList;
+    public List<Human> getHumans() {
+        return humans;
     }
 
-    public void setHumanList(List<Human> humanList) {
-        this.humanList = humanList;
+    public void setHumans(List<Human> humans) {
+        this.humans = humans;
     }
 
     public List<Weapon> getWeaponList() {

@@ -18,7 +18,7 @@ public class Monster {
         this.hp = hp;
     }
 
-    public String notTestedCarnivorous(){
+    public String eatFood(){
         String result;
         if (carnivorous){
             result = "Eat meat.";
